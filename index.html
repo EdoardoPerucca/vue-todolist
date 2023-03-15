@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <div id="app">
+
+        <div id="container">
+        
+            <h1>
+                To Do List
+            </h1>
+
+           
+            <input type="text" placeholder="Cose da fare" v-model="newTodo" @keyup.enter="addTodo">
+            <button @click="addTodo">Aggiungi</button>
+            
+            <div id="list-container" v-for="(todo, index) in todos">
+                
+                <div>
+                    {{ todo.text }}   
+                </div>       
+                <div id="remove-item" @click="removeTodo(index)">
+                    x 
+                </div>
+            </div>
+              
+            
+        </div>
+
+
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
