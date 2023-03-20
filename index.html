@@ -23,7 +23,7 @@
             <input type="text" placeholder="Cose da fare" v-model="newTodo" @keyup.enter="addTodo">
             <button @click="addTodo">Aggiungi</button>
             
-            <div id="list-container" v-for="(todo, index) in todos">
+            <div id="list-container" @click="toggleTodo(todo)" v-for="(todo, index) in todos" :class="todo.done == true ? 'todo-completed' : '' ">
                 
                 <div>
                     {{ todo.text }}   

@@ -29,16 +29,21 @@ createApp({
         newTodo: '',
        
         
-      todos: [
-
-        { 
-            'text': '',
-            'done': false
-        }
-       
-            
-
-        ],
+        todos: [
+            {
+              text: 'Fare la spesa',
+              done: true
+            },
+            {
+              text: 'Andare a teatro',
+              done: false
+            },
+            {
+              text: 'Visita dentistica',
+              done: true
+            },
+           
+          ],
 
         
     }
@@ -61,11 +66,13 @@ methods: {
         this.todos.splice(index, 1)
     },
 
+
+    toggleTodo(todo) {
+      todo.done = !todo.done
+    }
+
    
 }
-
-
-
 
 
 }).mount('#app')
